@@ -1,0 +1,9 @@
+graph TD;
+    A[User Input: Text Prompt] -->|Send prompt| B[ComfyUI Interface];
+    B -->|Processes input| C[Stable Diffusion Model];
+    C -->|Generates image| D[Latent Space Processing];
+    D -->|Refines output| E[Decoder (VAE)];
+    E -->|Final image output| F[Generated Image];
+    F -->|Displays result| G[User Review & Feedback];
+    
+    G -- Iterative Refinement -->|Modify parameters| B;
