@@ -23,20 +23,95 @@ This project demonstrates the use of **Stable Diffusion** with **ComfyUI** for A
 git clone https://github.com/yourusername/StableDiffusion_ComfyUI_Project.git
 cd StableDiffusion_ComfyUI_Project
 
-# Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 ```
 
-## Usage
-### Running the ComfyUI Interface
-```bash
-python launch_comfyui.py
+
+## **1. Download and Set Up ComfyUI**
+
+### **Step 1: Clone the ComfyUI Repository**
+Open a terminal and run:
+```sh
+git clone https://github.com/comfyanonymous/ComfyUI.git
+cd ComfyUI
 ```
-Access the interface via `http://localhost:5000` in your web browser.
+
+### **Step 2: Install Dependencies**
+Ensure you have **Python 3.8+** installed, then install the required packages:
+```sh
+pip install -r requirements.txt
+```
+
+---
+
+## **2. Download Stable Diffusion Model Checkpoints**
+
+### **Step 3: Get a Stable Diffusion Model**
+Download a Stable Diffusion model from Hugging Face:
+- **Comfy-Org/stable-diffusion-v1-5-archive**: [Download](https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/blob/main/v1-5-pruned-emaonly-fp16.safetensors)
+
+
+### **Step 4: Move Model to the Correct Folder**
+After downloading, move the model file to the `models/checkpoints/` directory:
+```sh
+mkdir -p models/checkpoints
+mv path/to/downloaded/model.safetensors models/checkpoints/
+```
+
+---
+
+## **3. Running ComfyUI with Stable Diffusion**
+
+### **Step 5: Start the ComfyUI Interface**
+Run the following command to start ComfyUI:
+```shhttps
+python main.py
+```
+
+### **Step 6: Access the Web Interface**
+Once ComfyUI is running, open your browser and go to:
+👉 **http://127.0.0.1:8188**
+
+---
+
+## **4. Generating an Image**
+
+### **Step 7: Provide a Text Prompt**
+- In the ComfyUI interface, enter a **text prompt** describing the image.
+- Adjust **sampling steps, CFG scale, and resolution** if needed.
+
+### **Step 8: Select the Checkpoint**
+- Ensure your **Stable Diffusion model** is selected under "Checkpoint".
+
+### **Step 9: Generate the Image**
+- Click **"Generate"** to create the image!
+- The generated images will be saved in the `output_images/` directory.
+
+---
+
+## **5. Saving and Accessing Generated Images**
+
+- Images are saved in the **`output_images/`** folder inside the ComfyUI directory.
+- You can edit or enhance these images using an image editor.
+
+---
+
+## **6. Stopping the Interface**
+
+To stop ComfyUI, press:
+```sh
+CTRL + C
+```
+Or simply close the terminal window.
+
+---
+
+## **7. Conclusion**
+
+You have successfully set up **ComfyUI with Stable Diffusion**! 🚀 Start experimenting with different prompts and models to create unique AI-generated images.
+
 
 ### Generating an Image
 1. Open the ComfyUI interface.
@@ -57,7 +132,7 @@ StableDiffusion_ComfyUI_Project/
 ```
 
 ## Results
-![Sample Image]("C:\Users\sarfa\Downloads\internship comfyui\ComfyUI_00001_.png")
+![ComfyUI_00001_ ](""C:\Users\sarfa\Downloads\ComfyUI_windows_portable_nvidia\ComfyUI_windows_portable\ComfyUI\output\ComfyUI_00001_.png"")
 
 ## Future Work
 - Enhancing UI features for better user control.
